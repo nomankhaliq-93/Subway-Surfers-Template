@@ -108,6 +108,24 @@ public class SwipeControls : MonoBehaviour {
                     default:
                         break;
                 }
+#if UNITY_EDITOR
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    Playermuving.player.Jump();
+                }
+                else if(Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    Playermuving.player.StartCoroutine(Playermuving.player.Muvingdow());
+                }
+                else if(Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    Playermuving.player.StartCoroutine(Playermuving.player.Muvingleft());
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    Playermuving.player.StartCoroutine(Playermuving.player.Muvingright());
+                }
+#endif
                 //}
                 // }
             }
